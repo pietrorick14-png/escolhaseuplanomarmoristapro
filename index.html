@@ -94,7 +94,7 @@ h1{text-align:center;font-size:clamp(22px,4vw,30px);font-weight:800;letter-spaci
 <div class="w">
   <h1>Escolha o seu plano</h1>
   <p class="sub">Black Friday: acesso liberado na hora. Cartão ou Pix.</p>
-  <div class="scarcity">⚠️ Restam apenas <b>6 últimos acessos</b> com o preço de Black Friday</div>
+  <div class="scarcity">⚠️ Restam apenas <b>4 últimos acessos</b> com o preço de Black Friday</div>
 </div>
 
 <div class="w plans">
@@ -168,9 +168,12 @@ h1{text-align:center;font-size:clamp(22px,4vw,30px);font-weight:800;letter-spaci
      +'<button class="btn btn-au pg-go" type="button" data-pg="cartao">ASSINAR NO CARTÃO · '+P.mes+'/mês</button></div>'
      +(PIX_ON?'<div class="pg-pix"><div class="pg-h"><b>💠 Pix</b><span><b>'+P.pixMes+'</b><small>/mês</small></span></div>'
        +'<button class="btn btn-gh pg-go" type="button" data-pg="pix1">ASSINAR NO PIX · '+P.pixMes+'/mês</button></div>':'')
-     +'<button class="pg-link" type="button" data-pg="outras" aria-expanded="'+outras+'">'+(outras?'Esconder o plano anual':'Prefere pagar o ano todo de uma vez? ('+P.eco+')')+'</button>'
-     +(outras?'<div class="pg-opts"><button class="pg-opt" type="button" data-pg="anual"><span><b>Anual no cartão</b><small>Renova sozinho todo ano · sai por '+P.anoMes+'/mês</small></span><span><b>'+P.ano+'</b></span></button>'
-       +'<button class="pg-opt" type="button" data-pg="pix12"><span><b>Anual no Pix</b><small>Pagamento único, 365 dias. Não renova sozinho.</small></span><span><b>'+P.ano+'</b></span></button></div>':'')
+     +'<div class="pg-pix" style="border-color:var(--au)"><span class="pg-badge">🔥 BLACK FRIDAY · ANO TODO</span>'
+       +'<div class="pg-h"><b>Pague o ano todo de uma vez</b><span><b>'+P.ano+'</b></span></div>'
+       +'<p style="margin:0;font-size:12.5px;color:var(--mu)">Sai por '+P.anoMes+'/mês · '+P.eco+' · pagamento à vista, sem parcelar</p>'
+       +'<button class="btn btn-au pg-go" type="button" data-pg="anual">PAGAR NO CARTÃO · '+P.ano+'</button>'
+       +'<button class="btn btn-gh pg-go" type="button" data-pg="pix12">PAGAR NO PIX · '+P.ano+'</button>'
+       +'<small style="color:var(--mu);font-size:11.5px">No cartão, renova sozinho todo ano. No Pix, pagamento único de 365 dias — não renova sozinho.</small></div>'
      +'<div class="pg-trust"><span>🔒 Pagamento seguro pela Stripe</span><span>Garantia de 7 dias · cancele quando quiser</span></div>';}
   function pgAbre(plano,de){plAtual=plano==='pro'?'pro':'equipe';outras=false;foco=de||null;desenha();pg.hidden=false;
     requestAnimationFrame(function(){pg.classList.add('on');var g=pgIn.querySelector('.pg-go');if(g)g.focus();});document.body.style.overflow='hidden';}
