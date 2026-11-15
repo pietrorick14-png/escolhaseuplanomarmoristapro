@@ -74,6 +74,9 @@ h1{text-align:center;font-size:clamp(22px,4vw,30px);font-weight:800;letter-spaci
 .pg-card>em{position:absolute;top:-10px;left:16px;font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:3px 9px;border-radius:999px;background:linear-gradient(135deg,#FFD35A,#E0A100);color:#1A1405}
 .pg-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}.pg-h>b{font-size:16px}.pg-h span b{font-size:26px;color:var(--au2)}.pg-h small{font-size:12px;color:var(--mu)}
 .pg-card p{margin:0;font-size:13.5px;line-height:1.45;color:#DCDAD3}
+.pg-card .lock{display:block;font-size:12.5px;font-weight:700;color:var(--au2);margin-top:-2px}
+.pg-card .cancela{display:block;font-size:13.5px;font-weight:700;color:var(--tx);margin-top:2px}
+.pg-pix .lock2{display:block;font-size:12.5px;font-weight:700;color:#FF8A8A}
 .pg-pix{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:18px;border:1px solid var(--ln2);background:var(--bg2)}
 .pg-pix .pg-h>b{display:flex;align-items:center;gap:6px}
 .pg-go{width:100%;font-size:17px;padding:17px}
@@ -163,10 +166,12 @@ h1{text-align:center;font-size:clamp(22px,4vw,30px);font-weight:800;letter-spaci
     pgIn.innerHTML='<button class="pg-x" type="button" data-pg="fechar" aria-label="Fechar">×</button>'
      +'<div class="pg-sel" id="pg-sel">Escolha o plano</div><div class="pg-seg" role="group" aria-label="Plano"><button type="button" data-pg="p-equipe" aria-pressed="'+(plAtual==='equipe')+'">PRO Equipe<small>Toda a equipe</small></button><button type="button" data-pg="p-pro" aria-pressed="'+(plAtual==='pro')+'">PRO individual<small>1 celular + 1 computador</small></button></div>'
      +'<span class="pg-badge">BLACK FRIDAY · '+P.desc+'% OFF</span>'
-     +'<p style="margin:0;font-size:12.5px;color:#DCDAD3;text-align:center">Preco travado para sempre, nos proximos meses tambem, enquanto voce continuar assinando.</p>'
      +'<div class="pg-card"><em>Melhor preço</em><div class="pg-h"><b>Cartão de crédito</b><span><small class="pg-de">'+P.mesDe+'</small><b>'+P.mes+'</b><small>/mês</small></span></div>'
+     +'<span class="lock">🔒 Preço travado para sempre enquanto você continuar assinando</span>'
+     +'<span class="cancela">Cancele quando quiser</span>'
      +'<button class="btn btn-au pg-go" type="button" data-pg="cartao">ASSINAR NO CARTÃO · '+P.mes+'/mês</button></div>'
      +(PIX_ON?'<div class="pg-pix"><div class="pg-h"><b>💠 Pix</b><span><b>'+P.pixMes+'</b><small>/mês</small></span></div>'
+       +'<span class="lock2">⚠️ Preço de Black Friday só neste mês</span>'
        +'<button class="btn btn-gh pg-go" type="button" data-pg="pix1">ASSINAR NO PIX · '+P.pixMes+'/mês</button></div>':'')
      +'<div class="pg-pix" style="border-color:var(--au)"><span class="pg-badge">🔥 BLACK FRIDAY · ANUAL</span>'
        +'<div class="pg-h"><b>Pague o ano todo de uma vez</b><span><b>'+P.ano+'</b></span></div>'
